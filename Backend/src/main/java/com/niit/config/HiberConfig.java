@@ -14,33 +14,27 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.niit.dao.BillingaddressDao;
 import com.niit.dao.CartDao;
 import com.niit.dao.CategoryDao;
 import com.niit.dao.ProductDao;
 import com.niit.dao.RoleDao;
-import com.niit.dao.ShippingaddressDao;
+import com.niit.dao.ShipmentDao;
 import com.niit.dao.SupplierDao;
 import com.niit.dao.UserDao;
-import com.niit.dao.WishlistDao;
-import com.niit.daoimpl.BillingaddressDaoImpl;
 import com.niit.daoimpl.CartDaoImpl;
 import com.niit.daoimpl.CategoryDaoImpl;
 import com.niit.daoimpl.ProductDaoImpl;
 import com.niit.daoimpl.RoleDaoImpl;
-import com.niit.daoimpl.ShippingaddressDaoImpl;
+import com.niit.daoimpl.ShipmentDaoImpl;
 import com.niit.daoimpl.SupplierDaoImpl;
 import com.niit.daoimpl.UserDaoImpl;
-import com.niit.daoimpl.WishlistDaoImpl;
-import com.niit.model.Billingaddress;
 import com.niit.model.Cart;
 import com.niit.model.Category;
 import com.niit.model.Product;
 import com.niit.model.Role;
-import com.niit.model.Shippingaddress;
+import com.niit.model.Shipment;
 import com.niit.model.Supplier;
 import com.niit.model.User;
-import com.niit.model.Wishlist;
 
 @Configuration
 @ComponentScan("com.niit.*")
@@ -82,10 +76,8 @@ public class HiberConfig {
 		sessionBuilder.addAnnotatedClass(Category.class);
 		sessionBuilder.addAnnotatedClass(Product.class);
 		sessionBuilder.addAnnotatedClass(Supplier.class);
-		sessionBuilder.addAnnotatedClass(Shippingaddress.class);
-		sessionBuilder.addAnnotatedClass(Billingaddress.class);
+		sessionBuilder.addAnnotatedClass(Shipment.class);
 		sessionBuilder.addAnnotatedClass(Cart.class);
-		sessionBuilder.addAnnotatedClass(Wishlist.class);
 		return sessionBuilder.buildSessionFactory();
 	}
 	@Autowired
@@ -107,39 +99,35 @@ public class HiberConfig {
 	public RoleDao getRoleDao(SessionFactory sessionFactory) {
 		return new RoleDaoImpl(sessionFactory);
 	}
-	@Autowired(required = true)
-	@Bean(name = "ProductDao")
-	public ProductDao getProductDao(SessionFactory sessionFactory) {
-		return new ProductDaoImpl(sessionFactory);
-	}
-	@Autowired(required = true)
-	@Bean(name = "SupplierDao")
-	public SupplierDao getSupplierDao(SessionFactory sessionFactory) {
-		return new SupplierDaoImpl(sessionFactory);
-	}
-	@Autowired(required = true)
-	@Bean(name = "CategoryDao")
-	public CategoryDao getCategoryDao(SessionFactory sessionFactory) {
-		return new CategoryDaoImpl(sessionFactory);
-	}
-	@Autowired(required = true)
-	@Bean(name = "ShippingaddressDao")
-	public ShippingaddressDao getShippingaddressDao(SessionFactory sessionFactory) {
-		return new ShippingaddressDaoImpl(sessionFactory);
-	}
-	@Autowired(required = true)
-	@Bean(name = "BillingaddressDao")
-	public BillingaddressDao getBillingaddressDao(SessionFactory sessionFactory) {
-		return new BillingaddressDaoImpl(sessionFactory);
-	}
+	
 	@Autowired(required = true)
 	@Bean(name = "CartDao")
 	public CartDao getCartDao(SessionFactory sessionFactory) {
 		return new CartDaoImpl(sessionFactory);
 	}
+	
 	@Autowired(required = true)
-	@Bean(name = "WishlistDao")
-	public WishlistDao getWishlistDao(SessionFactory sessionFactory) {
-		return new WishlistDaoImpl(sessionFactory);
+	@Bean(name = "CategoryDao")
+	public CategoryDao getCategoryDao(SessionFactory sessionFactory) {
+		return new CategoryDaoImpl(sessionFactory);
 	}
+	
+	@Autowired(required = true)
+	@Bean(name = "ProductDao")
+	public ProductDao getProductDao(SessionFactory sessionFactory) {
+		return new ProductDaoImpl(sessionFactory);
+	}
+	
+	@Autowired(required = true)
+	@Bean(name = "ShipmentDao")
+	public ShipmentDao getShipmentDao(SessionFactory sessionFactory) {
+		return new ShipmentDaoImpl(sessionFactory);
+	}
+	
+	@Autowired(required = true)
+	@Bean(name = "SupplierDao")
+	public SupplierDao getSupplierDao(SessionFactory sessionFactory) {
+		return new SupplierDaoImpl(sessionFactory);
+	}
+	
 }

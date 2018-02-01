@@ -12,7 +12,11 @@ public List<Product> list();
 	
 	public Product getByProductName(String productname);
 	
+	public List<Product> getBySupplierName(String suppliername);
+	
 	public void saveOrUpdate(Product product);
+	
+	public List<Product> getByLatestProducts();
 	
 	public void delete(int product_id);
 }

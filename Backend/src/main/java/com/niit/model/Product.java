@@ -32,6 +32,8 @@ public class Product {
 
 	@Transient
 	private MultipartFile image;
+	
+	private String latestproducts;
 
 	public int getProductId() {
 		return productId;
@@ -95,6 +97,14 @@ public class Product {
 
 	public void setImage(MultipartFile image) {
 		this.image = image;
+	}
+
+	public String getLatestProducts() {
+		return latestproducts;
+	}
+
+	public void setLatestProducts(String latestproducts) {
+		this.latestproducts = latestproducts;
 	}
 	
 	

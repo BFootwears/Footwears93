@@ -56,6 +56,19 @@ public class ProductDaoImpl implements ProductDao {
 		}
 		return null;
 	}
+	
+	@Transactional
+	public List<Product> getBySupplierName(String suppliername) {
+		String hql = "from Product where SupplierName ='" + suppliername + "'";
+		Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
+		@SuppressWarnings("unchecked")
+		List<Product> listProduct = (List<Product>) (query).list();
+
+		if (listProduct != null && !listProduct.isEmpty()) {
+			return listProduct;
+		}
+		return null;
+	}
 
 	@Transactional
 	public void saveOrUpdate(Product product) {
@@ -68,5 +81,17 @@ public class ProductDaoImpl implements ProductDao {
 		Product productToDelete = new Product();
 		productToDelete.setProductId(productId);
 		sessionFactory.getCurrentSession().delete(productToDelete);
+	}
+	@Transactional
+	public List<Product> getByLatestProducts() {
+		String hql = "from Product where featured ='on'";
+		Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
+		@SuppressWarnings("unchecked")
+		List<Product> listProduct = (List<Product>) (query).list();
+
+		if (listProduct != null && !listProduct.isEmpty()) {
+			return listProduct;
+		}
+		return null;
 	}
 }

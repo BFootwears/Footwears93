@@ -2,89 +2,88 @@ package com.niit.test;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.niit.dao.BillingaddressDao;
 import com.niit.dao.CartDao;
 import com.niit.dao.CategoryDao;
 import com.niit.dao.ProductDao;
 import com.niit.dao.RoleDao;
-import com.niit.dao.ShippingaddressDao;
+import com.niit.dao.ShipmentDao;
 import com.niit.dao.SupplierDao;
 import com.niit.dao.UserDao;
-import com.niit.dao.WishlistDao;
-import com.niit.model.User;
-import com.niit.model.Wishlist;
-import com.niit.model.Billingaddress;
+
 import com.niit.model.Cart;
 import com.niit.model.Category;
+import com.niit.model.User;
 import com.niit.model.Product;
 import com.niit.model.Role;
-import com.niit.model.Shippingaddress;
+import com.niit.model.Shipment;
 import com.niit.model.Supplier;
 
 public class Test {
 
+	private static Cart productid;
 
 	public static void main (String[] args) {
 
-		@SuppressWarnings("resource")
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 		context.scan("com.niit.*");
 		context.refresh();
 
-		UserDao userDao = (UserDao) context.getBean("UserDao");
-		RoleDao roleDao = (RoleDao) context.getBean("RoleDao");
-		ProductDao productDao = (ProductDao) context.getBean("ProductDao");
-		SupplierDao supplierDao = (SupplierDao) context.getBean("SupplierDao");
 		CategoryDao categoryDao = (CategoryDao) context.getBean("CategoryDao");
-		ShippingaddressDao shippingaddressDao = (ShippingaddressDao) context.getBean("ShippingaddressDao");
-		BillingaddressDao billingaddressDao = (BillingaddressDao) context.getBean("BillingaddressDao");
+		UserDao userDao = (UserDao) context.getBean("UserDao");
+		ProductDao productDao = (ProductDao) context.getBean("ProductDao");
 		CartDao cartDao = (CartDao) context.getBean("CartDao");
-		WishlistDao wishlistDao = (WishlistDao) context.getBean("WishlistDao");
+		SupplierDao supplierDao = (SupplierDao) context.getBean("SupplierDao");
+		ShipmentDao shippingaddressDao = (ShipmentDao) context.getBean("ShipmentDao");
+		RoleDao roleDao = (RoleDao) context.getBean("RoleDao");
 		
-		User user = (User) context.getBean("user");
-		Role role = (Role) context.getBean("role");
-		Product product = (Product) context.getBean("product");
-		Supplier supplier = (Supplier) context.getBean("supplier");
 		Category category = (Category) context.getBean("category");
-		Shippingaddress shippingaddress = (Shippingaddress) context.getBean("shippingaddress");
-		Billingaddress billingaddress = (Billingaddress) context.getBean("billingaddress");
+		User user = (User) context.getBean("user");
+		Product product = (Product) context.getBean("product");
 		Cart cart = (Cart) context.getBean("cart");
-		Wishlist wishlist = (Wishlist) context.getBean("wishlist");
+		Supplier supplier = (Supplier) context.getBean("supplier");
+		Shipment shippingaddress = (Shipment) context.getBean("shippingaddress");
+		Role role = (Role) context.getBean("role");
 		
 		
-		user.setUname("");
-		user.setEmail("");
-		user.setPwd("");
+		category.setCategoryName("Watches");
 		
-		user.setMnum("");
-		user.setAddress("");
-		user.setPincode("");
+		categoryDao.saveOrUpdate(category);
+		
+		
+		user.setUname("skfr");
+		user.setEmail("jhvd@gmail.com");
+		user.setPwd("jfkd");
+		
+		user.setMnum("98765");
+		user.setAddress("s12,sejkajdh");
 
-		role.setUname("");
-		role.setEmail("");
-		role.setMnum("");
+		role.setUname("kjgdffd");
+		role.setEmail("hgfshdghj");
+		role.setMnum("6567");
 		
 		user.setRole(role);
 		role.setUser(user);
 		
 		userDao.saveOrUpdate(user);
 		roleDao.saveOrUpdate(role);
-		product.setProductName("");
+		
+		
+		product.setProductName("fdknmfg");
 		productDao.saveOrUpdate(product);
-		supplier.setSupplierName("");
+		
+		
+		cart.setProductName("dfhjj");
+		cartDao.saveOrUpdate(cart);
+		
+		
+		supplier.setSupplierName("hddsjk");
 		supplier.setContactNumber(87968764);
 		supplierDao.saveOrUpdate(supplier);
-category.setCategoryName("");
 		
-		categoryDao.saveOrUpdate(category);
-		shippingaddress.setAddress("");
-		shippingaddress.setUserName("");
+		shippingaddress.setAddress("fdgfs");
+		shippingaddress.setUserName("jkfgjd");
 		shippingaddressDao.saveOrUpdate(shippingaddress);
-		billingaddress.setAddress("");
-		billingaddress.setContactNumber(897465);
-		billingaddressDao.saveOrUpdate(billingaddress);
-		cart.setProductName("");
-		cartDao.saveOrUpdate(cart);
-				
+		
+		
 	}
 }
