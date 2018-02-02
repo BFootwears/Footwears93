@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Product</title>
+<title>Album</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -18,13 +18,13 @@ html {
 	height: 100%;
 }
 body {
-	background: url(D:/shoes/Frontend/src/main/webapp/WEB-INF/resources/prodes/hd.jpg) !important;
+	background: url(resources/bg/hd.jpg) !important;
 	padding: 0px;
 	height: 100%;
 }
 #pic {
-	width: 300px;
-	height: 300px;
+	width: 200px;
+	height: 200px;
 	align: left;
 }
 #marginbot
@@ -43,20 +43,32 @@ h5{
  <img id="pic"src="resources/heels/${product.productId}.jpg" alt="${product.productId}">
  </div>
  <div class="col-sm-6">
-<h5 >Product Name: ${product.productName}</h5>
-<h5 >Product Description: ${product.productDescription}</h5>
-  <h5>Price: Rs: ${product.price}</h5>
+<h5 >Album Name: ${product.productName}</h5>
+<h5 >Album Description: ${product.productDescription}</h5>
+  <h5>Price:&#8377; ${product.price}</h5>
  <span style="color: red;"> ${message}</span>
 
-  
+  	<c:if test="${empty OutofStock}">
     <c:if test="${pageContext.request.userPrincipal.name == null }">
-  <p><a href="loginPage"><button class="btn btn-success">Add To Cart</button></a></p>
+  <p><a href="login"><button class="btn btn-success">Add To Cart</button></a></p>
   <p><a href="home"><button align="left" class="btn btn-danger">Go Back</button></a></p>
   </c:if>
     <c:if test="${pageContext.request.userPrincipal.name != null }">
-  <br><br><br><p><a href="addtocart?productId=${product.productId}"><button class="btn btn-success">Add To Cart</button></a></p>
+  <p><a href="addtocart?productId=${product.productId}"><button class="btn btn-success">Add To Cart</button></a></p>
+  <p><a href="afterlogin"><button align="left" class="btn btn-danger">Go Back</button></a></p> 
+  </c:if>
+  </c:if>
+    	<c:if test="${not empty OutofStock}">
+    <c:if test="${pageContext.request.userPrincipal.name == null }">
+  <p><button class="btn btn-warning">Out of Stock</button></p>
   <p><a href="home"><button align="left" class="btn btn-danger">Go Back</button></a></p>
   </c:if>
+    <c:if test="${pageContext.request.userPrincipal.name != null }">
+  <p><button class="btn btn-warning">Out of Stock</button></p>
+  <p><a href="afterlogin"><button align="left" class="btn btn-danger">Go Back</button></a></p> 
+  </c:if>
+  </c:if>
+  
 </div>
 <div id=marginbot></div>
 

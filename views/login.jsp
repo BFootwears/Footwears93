@@ -18,6 +18,14 @@ body {
 label{
 	color: white;
 }
+#btn{
+background-color: red;
+color: black;
+text-decoration: none !important;
+}
+#footer{
+margin-top: 300px;
+}
 </style>
 <title>Login</title>
 </head>
@@ -39,16 +47,9 @@ label{
   </div>
   <div class="form-group"> 
     <div class="col-sm-offset-5 col-sm-3">
-      <div class="checkbox">
-        <label><input type="checkbox"> Remember me</label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group"> 
-    <div class="col-sm-offset-5 col-sm-3">
       <button type="submit" class="btn btn-dark" id="subbutton">Login</button>
       <c:url value="/signup" var="register"></c:url>
-	  <u><a href="${register}">New User?</a></u><br>
+	  <u><button id="btn" class= "btn btn-danger"><a id="btn" href="${register}">New User?</a></button></u><br>
     </div>
   </div>
 </form>

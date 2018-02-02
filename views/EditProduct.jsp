@@ -83,6 +83,46 @@ function isAlphabet(elem, helperMsg) {
       <input type="text" class= "form-control" name="productDescription" value="${product.productDescription}">
     </div>
   </div>
+  <div class="form-group">
+    <label class="control-label col-sm-offset-2 col-sm-3" for="pwd">Supplier:</label>
+    <div class="col-sm-3"> 
+  <select class="form-control" name="SupplierName" id="suppliername">
+    <option value="">Select Brand</option>
+  <c:forEach items="${supplierList}" var="supplier" varStatus="status">
+  <option value="${supplier.supplierName}">${supplier.supplierName}</option>
+  </c:forEach></select>
+    </div>
+  </div>
+      <div class="form-group">
+    <label class="control-label col-sm-offset-2 col-sm-3" for="pwd">Category:</label>
+    <div class="col-sm-3"> 
+  <select class="form-control" name="Category" id="category">
+    <option value="">Select Category</option>
+  <c:forEach items="${categoryList}" var="category" varStatus="status">
+  <option value="${category.categoryName}">${category.categoryName}</option>
+  </c:forEach></select>
+    </div>
+  </div>
+    <div class="form-group">
+    <label class="control-label col-sm-offset-2 col-sm-3" for="pwd">Price:</label>
+    <div class="col-sm-3"> 
+      <input type="text" class="form-control" name="Price" id="price" placeholder="Enter Price Amount" required>
+    </div>
+  </div>
+      <div class="form-group">
+    <label class="control-label col-sm-offset-2 col-sm-3" for="pwd">Stock:</label>
+    <div class="col-sm-3"> 
+      <input type="text" class="form-control" name="Stock" id="stock" placeholder="Enter Stock Number" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-offset-2 col-sm-3" for="pwd">Latest Products:</label>
+    <div class="col-sm-3"> 
+      <div class="checkbox">
+  <label><input type="checkbox" name="latestproducts"></label>
+</div>
+    </div>
+  </div>
   <div class="form-group"> 
     <div class="col-sm-offset-5 col-sm-3">
       <button type="submit" class="btn btn-dark" id="subbutton" value ="submit">Submit</button>

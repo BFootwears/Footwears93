@@ -38,11 +38,16 @@ padding-top: 10px;
 </head>
 <body>
 <%@ include file="header.jsp"%>
-<div class="row">
-		<div id="products" class="col-sm-12">
+<c:if test="${not empty DisplayByLatestProduct}">
+		<div id="albums" class="col-sm-12">
 			<p class="Latest">Latest Products</p>
-		</div>
 	</div>
+</c:if>
+<c:if test="${empty DisplayByLatestProduct}">
+		<div id="albums" class="col-sm-12">
+			<p class="Latest">Products</p>
+	</div>
+</c:if>
 <c:forEach items="${product}" var="product">
 
 <div class="gallery">

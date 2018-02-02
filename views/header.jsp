@@ -31,9 +31,16 @@
 					<div class="collapse navbar-collapse" id="myNavbar">
 						<ul class="nav navbar-nav">
 						<a class="navbar-brand" href="home">B Footwears</a>
-							<c:url value="/about" var="about"></c:url>
-							<li><a href="${about}" id="page">About</a></li>
-							<li><a href="#" id="page">Latest Products</a></li>
+						    <li><a href="#about" id="page">About</a></li>
+							<c:if test="${pageContext.request.userPrincipal.name==null }">
+							<li><a href="displaysupplier" id="page">Supplier</a></li>
+							<li><a href="products" id="page">Products</a></li>
+							</c:if>
+							<security:authorize access="hasRole('ROLE_USER')">
+							<li><a href="displaysupplier" id="page">Supplier</a></li>
+							<li><a href="products" id="page">Products</a></li>
+							</security:authorize>
+							<li>
 							<li>
 							<security:authorize access="hasRole('ROLE_ADMIN')">
 						<li class="dropdown"><a href="Category" class="dropdown-toggle"
@@ -72,6 +79,13 @@
 									<c:if test="${pageContext.request.userPrincipal.name!=null }">
 									<li id="right"><security:authorize access="hasRole('ROLE_USER')">
 					<li><a href="#">Hi ${pageContext.request.userPrincipal.name}!!</a></li>
+					<li><a href="myCart"><span
+									class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+									<li><a href="History"><span
+									class="glyphicon glyphicon-list"></span> Orders</a></li>
+					</security:authorize><security:authorize access="hasRole('ROLE_ADMIN')">
+					<li><a href="adminCart"><span
+									class="glyphicon glyphicon-list-alt"></span> Orders</a></li>
 					</security:authorize></li>
 					<c:url value="/logout" var="logout"></c:url>
 							<li id="right"><a href="${logout}"><span

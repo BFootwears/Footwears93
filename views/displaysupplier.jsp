@@ -12,11 +12,10 @@
 <style type="text/css">
 
 div.gallery {
-    margin: 5px;
-    
-    width: 200px;
+    margin: 10px;
+    float: left;
+    width: 250px;
     padding: 30px;
-    
 }
 
 div.gallery img {
@@ -28,15 +27,6 @@ div.desc {
     padding: 15px;
     text-align: center;
 }
-#pn{
-font-family: Comic Sans MS; 
-color:black;
- text-shadow: 0 0 5px #AEB6BF, 0 0 10px #AEB6BF,
-             0 0 20px #AEB6BF, 0 0 30px #AEB6BF,
-             0 0 40px #AEB6BF;
-             font-size: 150%;
-
-}
 </style>
 </head>
 <body>
@@ -46,7 +36,7 @@ color:black;
 
 <div class="gallery col-offset-5 col-sm-1">
   <a href="displayproduct?suppliername=${supplier.supplierName}">
-    <img align="middle" src="resources/Brands/${supplier.supplierId}.jpg" alt="${supplier.supplierId}" width=250px; height=250px;>
+    <img align="middle" src="resources/Brands/${supplier.supplierId}.jpg" alt="${supplier.supplierId}" width=200px; height=200px;>
   </a>
   <div class="desc"><ul style="list-style-type:none">
   <li class="span2"><h5 id="pn" align="center" "color: blue" >${supplier.supplierName}</h5></li></ul></div>

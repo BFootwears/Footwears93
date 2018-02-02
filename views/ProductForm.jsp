@@ -151,6 +151,14 @@ label{
       <input type="file" class="form-control" name="file" id="file" placeholder="Enter Price Amount" required>
     </div>
   </div>
+  <div class="form-group">
+    <label class="control-label col-sm-offset-2 col-sm-3" for="pwd">Latest Products:</label>
+    <div class="col-sm-3"> 
+      <div class="checkbox">
+  <label><input type="checkbox" name="latest products"></label>
+</div>
+    </div>
+  </div>
   <div class="form-group"> 
     <div class="col-sm-offset-5 col-sm-3">
       <button type="submit" class="btn btn-dark" id="subbutton">Submit</button>
