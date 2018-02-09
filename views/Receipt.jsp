@@ -9,7 +9,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style type="text/css">
 body {
-	background: url(resources/bg/cart.jpg) !important;
+	background: url(resources/bg/black.jpg) !important;
 	padding: 0px;
 }
 #albums{
@@ -36,7 +36,7 @@ margin-bottom: 150px;
 }
 </style>
 	</head>
-	<br><br><br>
+	<br><br><br><br>
 <div class="container">
 	<div class="row">
 
@@ -78,8 +78,8 @@ margin-bottom: 150px;
 						<tr>
 							<td class="col-md-9"><em>${cart.productName}</em></td>
 							<td class="col-md-1" style="text-align: center">${cart.qty}</td>
-							<td class="col-md-1 text-center"> &#8377;${cart.price}</td>
-							<td class="col-md-1 text-center"> &#8377;${cart.total}</td>
+							<td class="col-md-1 text-center">&#8377;${cart.price}</td>
+							<td class="col-md-1 text-center">&#8377;${cart.total}</td>
 						</tr>
 					</c:forEach>
 					<tr>
@@ -95,10 +95,10 @@ margin-bottom: 150px;
 						</td>
 						<td class="text-right">
 							<p>
-								<strong> &#8377;${subtotal}</strong>
+								<strong>&#8377;${subtotal}</strong>
 							</p>
 							<p>
-								<strong> &#8377;${deliver}</strong>
+								<strong>&#8377;${deliver}</strong>
 							</p>
 						</td>
 					</tr>
@@ -109,7 +109,7 @@ margin-bottom: 150px;
 								<strong>Total: </strong>
 							</h4></td>
 						<td class="text-right text-success"><h4>
-								<strong> &#8377;${subtotal + deliver}</strong>
+								<strong>&#8377;${subtotal + deliver}</strong>
 							</h4></td>
 					</tr>
 				</tbody>

@@ -13,7 +13,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style type="text/css">
 body {
-	background-image: url("resources/bg1/suppl.jpg");
+	background-image: url("resources/bg/black.jpg");
 }
 label{
 	color: white;
@@ -65,7 +65,7 @@ function isAlphabet(elem, helperMsg) {
 </script>
 <br> <br> <br>
 <br> <br> <br>
-<form class="form-horizontal" action="addSupplier" method="post" onsubmit="return formCategory()" enctype="multipart/form-data">
+<form class="form-horizontal" action="supplierEdited" method="post" onsubmit="return formCategory()" enctype="multipart/form-data">
   <div class="form-group">
     <label class="control-label col-sm-offset-2 col-sm-3" for="email">BrandID:</label>
     <div class="col-sm-3">

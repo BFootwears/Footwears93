@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -12,7 +13,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style type="text/css">
 body {
-	background-image: url("resources/bg2/pro.jpg");
+	background-image: url("resources/bg/pro.jpg");
 }
 label{
 	color: white;
@@ -87,7 +88,7 @@ function isAlphabet(elem, helperMsg) {
     <label class="control-label col-sm-offset-2 col-sm-3" for="pwd">Supplier:</label>
     <div class="col-sm-3"> 
   <select class="form-control" name="SupplierName" id="suppliername">
-    <option value="">Select Brand</option>
+    <option value="">Select Supplier</option>
   <c:forEach items="${supplierList}" var="supplier" varStatus="status">
   <option value="${supplier.supplierName}">${supplier.supplierName}</option>
   </c:forEach></select>
@@ -116,10 +117,10 @@ function isAlphabet(elem, helperMsg) {
     </div>
   </div>
   <div class="form-group">
-    <label class="control-label col-sm-offset-2 col-sm-3" for="pwd">Latest Products:</label>
+    <label class="control-label col-sm-offset-2 col-sm-3" for="pwd">Featured:</label>
     <div class="col-sm-3"> 
       <div class="checkbox">
-  <label><input type="checkbox" name="latestproducts"></label>
+  <label><input type="checkbox" name="featured"></label>
 </div>
     </div>
   </div>

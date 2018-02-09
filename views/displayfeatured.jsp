@@ -1,11 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <head>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style type="text/css">
 .container1 {
 	background: transparent;
@@ -74,31 +68,22 @@ margin-bottom: 5px;
 .Latest{
 padding-top: 10px;
 }
-#footer{
-margin-top: 250px;
-}
-body {
-	background: url(resources/bg/black.jpg) !important;
-	padding: 0px;
-	height: 100%;
-}
 </style>
 </head>
 <body>
-<%@ include file="header.jsp"%>
 		<div id="albums" class="col-sm-12">
-			<p class="Latest">Brands</p>
+			<p class="Latest">Featured</p>
 	</div>
-  <c:forEach items="${supplierList}" var="supplier" varStatus="status">
+  <c:forEach items="${product}" var="product" varStatus="status">
 <div class="col-sm-2">
 					<div id="f1_container1">
 						<div id="f1_card1" class="shadow">
 							<div class="front face">
-								<img class="alb" src="resources/Brands/${supplier.supplierId}.jpg" />
+								<img class="alb" src="resources/heels/${product.productId}.jpg" />
 							</div>
 							<div class="back face center">
-								<p class="proname">${supplier.supplierName}</p>
-								<p><a href="displayproduct?suppliername=${supplier.supplierName}"><button type="submit" class="btn btn-warning btn-md"><span class="glyphicon glyphicon-eye-open"></span>View</button></a></p>
+								<p class="proname">${product.productName}</p>
+								<p><a href="productdescription?productId=${product.productId}"><button type="submit" class="btn btn-warning btn-md"><span class="glyphicon glyphicon-eye-open"></span>View</button></a></p>
 							</div>
 						</div>
 					</div>

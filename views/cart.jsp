@@ -100,5 +100,6 @@ margin-top: 250px;
 		</table>
 	</div>
 </body>
+<br><br><br><br><br><br><br>
 <%@ include file="footer.jsp"%>
 </html>

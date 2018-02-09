@@ -18,7 +18,7 @@ html {
 	height: 100%;
 }
 body {
-	background: url(resources/bg3/prohome.jpg) !important;
+	background: url(resources/bg/prohome.jpg) !important;
 	padding: 0px;
 	height: 100%;
 }
@@ -39,15 +39,17 @@ align-content: center;
 		<div class="content">
 		<%@ include file="header.jsp"%>
 		<br><br>
-					<%@ include file="carousel.jsp"%>
+							<%@ include file="carousel.jsp"%>
 					<c:if test="${pageContext.request.userPrincipal.name==null }">
-					<%@ include file="displaysupplier.jsp"%>
+					<%@ include file="displayfeatured.jsp"%>
 					</c:if>
 					<c:if test="${pageContext.request.userPrincipal.name!=null }">
 					<security:authorize access="hasRole('ROLE_USER')">
-					<%@ include file="displaysupplier.jsp"%>
+					<%@ include file="displayfeatured.jsp"%>
 					</security:authorize>
 					</c:if>
+		</div>
+	</div>
 					<div class=container>
 <h1 id="about" align="center">About Us</h1>
 <p>High heels are a type of shoe in which the heel, compared to the toe, is significantly higher off of the ground. These shoes go beyond simply protecting the foot from the ground or improve efficiency of walking. High heels make the wearer taller, accentuating the calf muscle and the length of the leg overall. There are many types of high heels, which come in different styles, colors, and materials, and can be found all over the world.

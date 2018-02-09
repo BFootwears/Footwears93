@@ -77,7 +77,7 @@ color:red;
 }
 body {
   padding: 0 2em;
-  background-image: url("resources/bg1/suppl.jpg");
+  background-image: url("resources/bg/cart.jpg");
 }
 h1 {
   font-weight: normal;

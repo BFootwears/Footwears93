@@ -85,6 +85,9 @@ h1 {
 h1 span {
   color: #167F92;
 }
+body {
+  background-image: url("resources/bg/pro.jpg")!important;
+}
 </style>
 </head>
 <body>

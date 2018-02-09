@@ -99,5 +99,6 @@ margin-top:200px;
 	</div>
 	</form>
 </div>
-<%@ include file="footer.jsp"%>
 </html>
+<br><br><br>
+<%@ include file="footer.jsp"%>

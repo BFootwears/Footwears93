@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>About Us</title>
+<title>Orders</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -30,7 +30,7 @@ padding-top: 10px;
 margin-center: 20px;
 }
 #footer{
-margin-top: 400px;
+margin-top: 200px;
 }
 .cont {
 	margin-top: 90px;
@@ -107,6 +107,11 @@ color: white;
     padding: 1em;
   }
 }
+#txxt{
+margin-top: 150px;
+margin-bottom: 150px;
+color: white;
+}
 	</style>
 </head>
 <%@ include file="header.jsp"%>
@@ -118,7 +123,7 @@ color: white;
 	</div>
 	</div>
 		<c:if test="${size == 0}">
-			<h2>No Previous Orders...</h2>
+			<h2 class="text-center" id="txxt" >No Previous Orders...</h2>
 		</c:if>
 		<c:if test="${size != 0}">
 		<table class="responstable">
@@ -136,8 +141,8 @@ color: white;
 					<td>${status.count}</td>
 					<td style="text-align: center;">${cartitem.productName}</td>
 					<td style="text-align: center;">${cartitem.qty}</td>				
-					<td style="text-align: center;"> &#8377;${cartitem.price}</td>
-					<td style="text-align: center;"> &#8377;${cartitem.price * cartitem.qty}</td>
+					<td style="text-align: center;">&#8377;${cartitem.price}</td>
+					<td style="text-align: center;">&#8377;${cartitem.price * cartitem.qty}</td>
 					<c:if test="${cartitem.days<=0}">
 						<td style="text-align: center; color:#06e20a;">Delivered</td>
 					</c:if>
@@ -152,4 +157,5 @@ color: white;
 			</c:forEach>
 		</table>
 		</c:if>
-	</div>
+		<br><br><br><br><br><br><br><br>
+	<%@ include file="footer.jsp"%>

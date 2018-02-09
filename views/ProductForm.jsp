@@ -4,7 +4,7 @@
 <head>
   <style type="text/css">
 body {
-	background-image: url("resources/bg2/pro.jpg");
+	background-image: url("resources/bg/pro.jpg");
 }
 label{
 	color: white;
@@ -152,7 +152,7 @@ label{
     </div>
   </div>
   <div class="form-group">
-    <label class="control-label col-sm-offset-2 col-sm-3" for="pwd">Latest Products:</label>
+    <label class="control-label col-sm-offset-2 col-sm-3" for="pwd">Featured:</label>
     <div class="col-sm-3"> 
       <div class="checkbox">
   <label><input type="checkbox" name="latest products"></label>

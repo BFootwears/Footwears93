@@ -29,7 +29,7 @@
 	margin-top: 500px;
 }
 body {
-	background: url(resources/bg/cart.jpg) !important;
+	background: url(resources/bg/black.jpg) !important;
 	padding: 0px;
 }
 #app:hover #footer{
@@ -86,7 +86,7 @@ body {
 				</div>
 				<ul class="nav nav-pills nav-stacked">
 					<li class="active"><a href="#"><span
-							class="badge pull-right"><span class="fa fa-inr"></span> &#8377;${subtotal}</span>
+							class="badge pull-right"><span class="fa fa-inr"></span>&#8377;${subtotal}</span>
 							Final Payment</a></li>
 				</ul>
 				<br /> <a href="ThankYou" class="btn btn-success btn-lg btn-block"

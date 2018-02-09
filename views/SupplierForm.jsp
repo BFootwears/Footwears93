@@ -7,7 +7,7 @@
 <title>New Supplier</title>
 <style type="text/css">
 body {
-	background-image: url("resources/bg1/suppl.jpg");
+	background-image: url("resources/bg/cart.jpg");
 }
 label{
 	color: white;

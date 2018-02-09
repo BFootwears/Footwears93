@@ -13,7 +13,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style type="text/css">
 body {
-	background-image: url("http://www.mulierchile.com/heels-wallpapers/heels-wallpapers-038.jpg");
+	background-image: url("resources/bg/black.jpg");
 }
 label{
 	color: white;
@@ -25,6 +25,10 @@ text-decoration: none !important;
 }
 #footer{
 margin-top: 300px;
+}
+b{
+color: red;
+text-align: center;
 }
 </style>
 <title>Login</title>
@@ -45,6 +49,18 @@ margin-top: 300px;
       <input type="password" class="form-control" name="pwd" id="pwd" placeholder="Enter password" required>
     </div>
   </div>
+    <div class="form-group">
+    <label class="control-label col-sm-offset-2 col-sm-3" for="pwd"></label>
+    <div class="col-sm-3"> 
+      <c:if test="${not empty error}">
+				<div class="error"><b>${error}</b></div>
+	 			</c:if> 
+				<c:if test="${not empty logout}">
+			<div class="msg"><b>${logout}</b></div>
+				</c:if>				
+				<b>${message}</b>
+    </div>
+				</div>
   <div class="form-group"> 
     <div class="col-sm-offset-5 col-sm-3">
       <button type="submit" class="btn btn-dark" id="subbutton">Login</button>
@@ -53,10 +69,6 @@ margin-top: 300px;
     </div>
   </div>
 </form>
-<br> <br> <br>
-<br> <br> <br>
-<br> <br> <br>
-<br> <br> <br>
 </body>
 </html>
 <%@ include file="footer.jsp"%>

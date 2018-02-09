@@ -31,16 +31,14 @@
 					<div class="collapse navbar-collapse" id="myNavbar">
 						<ul class="nav navbar-nav">
 						<a class="navbar-brand" href="home">B Footwears</a>
-						    <li><a href="#about" id="page">About</a></li>
 							<c:if test="${pageContext.request.userPrincipal.name==null }">
-							<li><a href="displaysupplier" id="page">Supplier</a></li>
-							<li><a href="products" id="page">Products</a></li>
+							<li><a href="displaysupplier" id="page">Brands</a></li>
+							<li><a href="product" id="page">Product</a></li>
 							</c:if>
 							<security:authorize access="hasRole('ROLE_USER')">
-							<li><a href="displaysupplier" id="page">Supplier</a></li>
-							<li><a href="products" id="page">Products</a></li>
+							<li><a href="displaysupplier" id="page">Brands</a></li>
+							<li><a href="productsuser" id="page">Product</a></li>
 							</security:authorize>
-							<li>
 							<li>
 							<security:authorize access="hasRole('ROLE_ADMIN')">
 						<li class="dropdown"><a href="Category" class="dropdown-toggle"
@@ -51,7 +49,7 @@
 									<li><a href="Category" id="page2">Add</a></li>
 								</ul></li>
 								<li class="dropdown"><a href="Supplier" class="dropdown-toggle"
-								data-toggle="dropdown3" id="page">Brand<span
+								data-toggle="dropdown3" id="page">Brands<span
 									class="caret"></span></a>
 								<ul class="dropdown-menu" id="dropdown3">
 									<li><a href="viewSupplier" id="page2">View</a></li>
@@ -70,9 +68,6 @@
 						<ul class="nav navbar-nav navbar-right">
 						<c:if test="${pageContext.request.userPrincipal.name==null }">
 							<c:url value="/login" var="login"></c:url>
-							 <c:url value="/signup" var="signup"></c:url>
-							<li><a href="${signup}"><span
-									class="glyphicon glyphicon-user"></span> Sign Up</a></li> 
 							<li id="right"><a href="${login}"><span
 									class="glyphicon glyphicon-log-in"></span> Login</a></li>
 									</c:if>
@@ -87,7 +82,8 @@
 					<li><a href="adminCart"><span
 									class="glyphicon glyphicon-list-alt"></span> Orders</a></li>
 					</security:authorize></li>
-					<c:url value="/logout" var="logout"></c:url>
+											
+							<c:url value="/logout" var="logout"></c:url>
 							<li id="right"><a href="${logout}"><span
 									class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 									</c:if>

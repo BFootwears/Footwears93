@@ -8,22 +8,19 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style type="text/css">
-body {
-	background: url(resources/images/bg/background.jpg) !important;
-	padding: 0px;
-}
 #footer{
 margin-top: 100px;
 }
 </style>
 	</head>
+	<body>
 <div class="container">
 	<div class="row text-center">
 		<div class="col-sm-6 col-sm-offset-3">
 			<br>
 			<br>
 			<h2 style="color: #0fad00">Success</h2>
-			<img src="resources/images/misc/thankyou.jpg" width="200px;" height="150px;">
+			<img src="resources/bg/thank.jpg" width="200px;" height="150px;">
 
 			<h4>
 				<font color="#ba9a55">Your Shipment will be delivered within
@@ -32,10 +29,12 @@ margin-top: 100px;
 
 			<p style="font-size: 20px; color: #5C5C5C;">Thank you for
 				shopping!!!</p>
-			<a href="main" class="btn btn-success"> Visit Again </a> <br>
+			<a href="home" class="btn btn-success"> Visit Again </a> <br>
 			<br>
 		</div>
 
 	</div>
 </div>
+</body>
+<br><br><br><br><br><br>
 <%@ include file="footer.jsp"%>

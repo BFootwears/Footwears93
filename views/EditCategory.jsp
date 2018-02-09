@@ -65,7 +65,7 @@ function isAlphabet(elem, helperMsg) {
 </script>
 <br> <br> <br>
 <br> <br> <br>
-<form class="form-horizontal" action="addCategory" method="post" onsubmit="return formCategory()" enctype="multipart/form-data">
+<form class="form-horizontal" action="categoryEdited" method="post" onsubmit="return formCategory()" enctype="multipart/form-data">
   <div class="form-group">
     <label class="control-label col-sm-offset-2 col-sm-3" for="email">Category ID:</label>
     <div class="col-sm-3">

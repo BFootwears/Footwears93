@@ -90,4 +90,3 @@ function isAlphabet(elem, helperMsg) {
 <br> <br> <br>
 </body>
 </html>
-<%@ include file="footer.jsp"%>
